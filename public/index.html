@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#4b2818">
+  <meta name="description" content="Pão de queijo mineiro, tradicional e recheado. Faça sua encomenda com Do Mineiro.">
+  <title>Do Mineiro — Pão de queijo com gosto de casa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="topbar">Feito com carinho e um tantim de queijo 🧀</div>
+  <header class="header">
+    <a class="brand" href="#inicio" aria-label="Do Mineiro - início">
+      <span class="brand-mark">DM</span><span><strong>Do Mineiro</strong><small>PÃO DE QUEIJO ARTESANAL</small></span>
+    </a>
+    <nav><a href="#cardapio">Cardápio</a><a href="#sobre">Nossa história</a><a href="#como-pedir">Como pedir</a></nav>
+    <button class="cart-button" id="openCart">🛒 <span>Meu pedido</span><b id="cartCount">0</b></button>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <span class="eyebrow">Uai, que trem bão!</span>
+        <h1>O sabor de Minas<br><em>na sua mesa.</em></h1>
+        <p>Pão de queijo quentinho, casquinha crocante e coração macio. Do tradicional aos recheados, feito pra deixar seu dia mais gostoso.</p>
+        <div class="hero-actions"><a class="btn primary" href="#cardapio">Ver nosso cardápio <span>→</span></a><a class="text-link" href="#como-pedir">Como funciona?</a></div>
+        <div class="hero-note"><span>★★★★★</span> <small>Receita com carinho, sabor de casa.</small></div>
+      </div>
+      <div class="hero-photo">
+        <div class="photo-stamp">Receita<br><b>mineira</b><br>de verdade</div>
+        <div class="hero-caption">Assado na medida,<br>feito pra compartilhar.</div>
+      </div>
+    </section>
+
+    <section class="promise">
+      <div><span>🥖</span><strong>Feito artesanalmente</strong><small>Qualidade em cada fornada</small></div>
+      <div><span>🧀</span><strong>Queijo de verdade</strong><small>Sabor que abraça</small></div>
+      <div><span>🛵</span><strong>Delivery ou retirada</strong><small>Você escolhe como receber</small></div>
+    </section>
+
+    <section class="menu-section section-pad" id="cardapio">
+      <div class="section-heading"><div><span class="eyebrow">Nosso cantinho de delícias</span><h2>Escolha seu <em>favorito</em></h2></div><p>Um mais gostoso que o outro.<br>Qual vai ser o seu?</p></div>
+      <div class="filters" id="filters">
+        <button class="filter active" data-category="Todos">Tudo</button>
+        <button class="filter" data-category="Tradicionais">Tradicionais</button>
+        <button class="filter" data-category="Recheados">Recheados</button>
+        <button class="filter" data-category="Kits">Kits &amp; família</button>
+      </div>
+      <div class="product-grid" id="products"></div>
+    </section>
+
+    <section class="story section-pad" id="sobre">
+      <div class="story-art"><div class="round-seal">FEITO<br><b>EM MINAS</b><br>COM AMOR</div></div>
+      <div class="story-copy"><span class="eyebrow">Uai, pode chegar!</span><h2>Tem gosto de<br><em>casa de vó.</em></h2><p>Na Do Mineiro, cada pão de queijo carrega aquele jeitinho mineiro de receber: mesa cheia, conversa boa e comida feita com carinho. A gente acredita que coisa boa é coisa compartilhada.</p><div class="signature">Um abraço mineiro, <strong>Do Mineiro</strong> ♡</div></div>
+    </section>
+
+    <section class="how section-pad" id="como-pedir"><span class="eyebrow">Sem complicação, sô!</span><h2>Seu pedido em <em>3 passinhos</em></h2>
+      <div class="steps"><div><b>01</b><span>🧺</span><h3>Escolha as delícias</h3><p>Monte seu carrinho com os sabores que ama.</p></div><div><b>02</b><span>📅</span><h3>Combine a entrega</h3><p>Informe data, horário e como quer receber.</p></div><div><b>03</b><span>💛</span><h3>Receba com alegria</h3><p>Finalize e aguarde nossa confirmação.</p></div></div>
+    </section>
+    <section class="cta"><div><span class="eyebrow">Bateu vontade?</span><h2>Um pão de queijo<br>resolve qualquer prosa.</h2></div><a class="btn light" href="#cardapio">Fazer meu pedido →</a></section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#inicio"><span class="brand-mark">DM</span><span><strong>Do Mineiro</strong><small>PÃO DE QUEIJO ARTESANAL</small></span></a><p>Feito com carinho, servido com alegria.</p><small>© <span id="year"></span> Do Mineiro. Todos os direitos reservados.</small></footer>
+
+  <div class="cart-overlay" id="cartOverlay" hidden></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Seu carrinho" aria-hidden="true">
+    <div class="drawer-head"><div><span class="eyebrow">Sua sacolinha</span><h2>Meu pedido</h2></div><button class="icon-button" id="closeCart" aria-label="Fechar">✕</button></div>
+    <div class="cart-items" id="cartItems"><div class="empty-cart">Sua sacolinha está vazia 🧺<br><small>Escolha uma delícia do cardápio!</small></div></div>
+    <div class="cart-bottom"><div class="total-row"><span>Total dos produtos</span><strong id="cartTotal">R$ 0,00</strong></div><button class="btn primary full" id="checkoutButton">Reservar / finalizar pedido →</button><small class="cart-help">Entrega e taxa (se houver) são combinadas na confirmação.</small></div>
+  </aside>
+
+  <dialog id="checkoutDialog" class="checkout-dialog">
+    <form id="checkoutForm">
+      <div class="drawer-head"><div><span class="eyebrow">Só mais um minutim</span><h2>Finalizar pedido</h2></div><button type="button" class="icon-button" id="closeCheckout">✕</button></div>
+      <div class="form-grid">
+        <label>Seu nome<input name="name" required placeholder="Como podemos te chamar?"></label>
+        <label>WhatsApp<input name="phone" required inputmode="tel" placeholder="(31) 99999-9999"></label>
+        <label>Como deseja receber?
+          <select name="fulfillment" required><option value="Entrega">Entrega</option><option value="Retirada">Retirada no local</option></select>
+        </label>
+        <label>Data desejada<input name="date" type="date" required></label>
+        <label>Horário aproximado<input name="time" type="time" required></label>
+        <label>Pagamento
+          <select name="payment" required><option>Pix</option><option>Cartão de crédito</option><option>Cartão de débito</option><option>Dinheiro</option><option>Pagamento online (a combinar)</option></select>
+        </label>
+        <label class="address-field">Endereço (para entrega)<input name="address" placeholder="Rua, número, bairro e referência"></label>
+        <label class="notes-field">Observações<textarea name="notes" rows="2" placeholder="Alguma observação?"></textarea></label>
+      </div>
+      <div class="checkout-summary"><span>Resumo</span><strong id="checkoutTotal">R$ 0,00</strong><small id="checkoutItems"></small></div>
+      <button class="btn primary full" type="submit">Registrar pedido e abrir WhatsApp ↗</button>
+      <p class="form-footnote">O pedido será registrado neste site e uma mensagem será preparada no WhatsApp para confirmação.</p>
+      <div id="checkoutFeedback" role="status"></div>
+    </form>
+  </dialog>
+  <script src="app.js"></script>
+</body>
+</html>
