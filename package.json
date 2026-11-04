@@ -1,0 +1,13 @@
+{
+  "name": "do-mineiro-pao-de-queijo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Loja digital Do Mineiro - encomendas e reservas de pão de queijo",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
